@@ -16,6 +16,9 @@ namespace ArreguinThursheyco_CE01
 {
     public partial class UserInput : Form
     {
+        // Refernece to MainForm
+        MainForm main = Application.OpenForms[0] as MainForm;
+
         // EventHandler delegate
         public EventHandler AddToDone;
 
@@ -43,6 +46,9 @@ namespace ArreguinThursheyco_CE01
         public UserInput()
         {
             InitializeComponent();
+
+            // Subscribe to the event of editing an item when the user double clicks
+            main.ModifyObject += UserInput_ModifyItem;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -53,8 +59,32 @@ namespace ArreguinThursheyco_CE01
                 AddToDone(this, new EventArgs());
             }
 
-            // Close USerInput form
+            // Close UserInput form
             Close();
+        }
+
+        // EventHandler Method to modify the item selected from the ListBox on MainForm
+        public void UserInput_ModifyItem(object sender, MainForm.ModifyObjectEventArgs e)
+        {
+            // set fields for UserInput form from selected item
+            Item i = e.ObjectToModify1 as Item;
+
+            txtTitle.Text = i.Title;
+            rdoMovie.Checked = i.Movie;
+            rdoBook.Checked = i.Book;
+            chkDone.Checked = i.Done;
+
+            // show button to apply changes
+            btnEdit.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // raise the event to send back data to change selected items data in ListBox
+            if (main.ModifyObject != null)
+            {
+                main.ModifyObject(this, new MainForm.ModifyObjectEventArgs(main.SelectedObject));
+            }
         }
     }
 }

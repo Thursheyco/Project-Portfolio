@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBoxReadSeen = new System.Windows.Forms.ListBox();
             this.listBoxUnreadUnseen = new System.Windows.Forms.ListBox();
@@ -41,9 +43,6 @@
             this.btnMoveRight = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
@@ -65,7 +64,6 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
             this.printToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.toolStripSeparator1,
@@ -74,11 +72,22 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 36);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(324, 38);
+            this.printToolStripMenuItem.Text = "Print";
+            // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(324, 38);
             this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(321, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -106,6 +115,7 @@
             this.listBoxUnreadUnseen.Name = "listBoxUnreadUnseen";
             this.listBoxUnreadUnseen.Size = new System.Drawing.Size(430, 445);
             this.listBoxUnreadUnseen.TabIndex = 2;
+            this.listBoxUnreadUnseen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxUnreadUnseen_MouseDoubleClick);
             // 
             // btnDelete
             // 
@@ -169,23 +179,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Movies To-Watch / Books To-Read";
             // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(324, 38);
-            this.printToolStripMenuItem.Text = "Print";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(321, 6);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(324, 38);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -228,7 +221,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
     }
 }
 

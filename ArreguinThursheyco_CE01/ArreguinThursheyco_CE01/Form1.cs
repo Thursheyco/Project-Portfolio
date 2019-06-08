@@ -16,6 +16,49 @@ namespace ArreguinThursheyco_CE01
 {
     public partial class MainForm : Form
     {
+        // EventHandler delegate to call the EventHandler method on MainForm
+        public EventHandler<ModifyObjectEventArgs> ModifyObject;
+
+        // declare an internal class to help me modify a selected item from the listBoxUnseenUnread
+        public class ModifyObjectEventArgs : EventArgs
+        {
+            // Instance / Member variables used to buld a new object with the selected item in the ListBox
+            Item ObjectToModify;
+
+            // Properties to allow access to the Item that I want to modify
+            public Item ObjectToModify1
+            {
+                get
+                {
+                    return ObjectToModify;
+                }
+                set
+                {
+                    ObjectToModify = value;
+                }
+            }
+
+            // Constructor that will take in parameters to modify
+            public ModifyObjectEventArgs(Item i)
+            {
+                ObjectToModify = i;
+            }
+        }
+
+        // public property to access selected item in listBoxUnseenUnread
+        public Item SelectedObject
+        {
+            get
+            {
+                // check if anyhting is selected within listBoxUnseenUnread
+                if(listBoxUnreadUnseen.SelectedItem != null)
+                {
+                    return listBoxUnreadUnseen.SelectedItem as Item;
+                }
+                return new Item();
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -39,7 +82,7 @@ namespace ArreguinThursheyco_CE01
             ui.Show();
         }
 
-        // event handler method to handle adding a new Item to first ListBox
+        // event handler method to handle adding a new Item to either ListBox
         public void AddToListBox1(object sender, EventArgs e)
         {
             // cast the sender as a UserInput form to extract its data
@@ -113,7 +156,7 @@ namespace ArreguinThursheyco_CE01
             }
             else if(listBoxReadSeen.SelectedItem != null)
             {
-                // delected selected item from listBoxReadSeen
+                // delete selected item from listBoxReadSeen
                 listBoxReadSeen.Items.Remove(listBoxReadSeen.SelectedItem);
             }
             else
@@ -122,5 +165,15 @@ namespace ArreguinThursheyco_CE01
                 MessageBox.Show("Please select an item from Movies Seen / Books Read first,\nor from Movies To-Watch / Books To-Read.");
             }
         }
+
+        private void listBoxUnreadUnseen_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // Instantiate a new UserInput form 
+            UserInput ui = new UserInput();
+
+            // show UserInput form with populates fields to change
+            ui.Show();
+        }
+
     }
 }

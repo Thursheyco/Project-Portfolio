@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rdoMovie = new System.Windows.Forms.RadioButton();
-            this.rdoBook = new System.Windows.Forms.RadioButton();
-            this.chkDone = new System.Windows.Forms.CheckBox();
             this.btnEnter = new System.Windows.Forms.Button();
+            this.chkDone = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdoBook = new System.Windows.Forms.RadioButton();
+            this.rdoMovie = new System.Windows.Forms.RadioButton();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btnEnter);
             this.groupBox1.Controls.Add(this.chkDone);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -54,21 +56,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enter Movie or Book";
             // 
-            // label1
+            // btnEnter
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Title:";
+            this.btnEnter.Location = new System.Drawing.Point(18, 309);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(215, 78);
+            this.btnEnter.TabIndex = 4;
+            this.btnEnter.Text = "Enter";
+            this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
-            // txtTitle
+            // chkDone
             // 
-            this.txtTitle.Location = new System.Drawing.Point(63, 56);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(381, 31);
-            this.txtTitle.TabIndex = 1;
+            this.chkDone.AutoSize = true;
+            this.chkDone.Location = new System.Drawing.Point(18, 241);
+            this.chkDone.Name = "chkDone";
+            this.chkDone.Size = new System.Drawing.Size(395, 29);
+            this.chkDone.TabIndex = 3;
+            this.chkDone.Text = "Are you done watching or reading it?";
+            this.chkDone.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -80,6 +86,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Movie or Book";
+            // 
+            // rdoBook
+            // 
+            this.rdoBook.AutoSize = true;
+            this.rdoBook.Location = new System.Drawing.Point(179, 43);
+            this.rdoBook.Name = "rdoBook";
+            this.rdoBook.Size = new System.Drawing.Size(92, 29);
+            this.rdoBook.TabIndex = 1;
+            this.rdoBook.Text = "Book";
+            this.rdoBook.UseVisualStyleBackColor = true;
             // 
             // rdoMovie
             // 
@@ -93,35 +109,32 @@
             this.rdoMovie.Text = "Movie";
             this.rdoMovie.UseVisualStyleBackColor = true;
             // 
-            // rdoBook
+            // txtTitle
             // 
-            this.rdoBook.AutoSize = true;
-            this.rdoBook.Location = new System.Drawing.Point(179, 43);
-            this.rdoBook.Name = "rdoBook";
-            this.rdoBook.Size = new System.Drawing.Size(92, 29);
-            this.rdoBook.TabIndex = 1;
-            this.rdoBook.Text = "Book";
-            this.rdoBook.UseVisualStyleBackColor = true;
+            this.txtTitle.Location = new System.Drawing.Point(63, 56);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(381, 31);
+            this.txtTitle.TabIndex = 1;
             // 
-            // chkDone
+            // label1
             // 
-            this.chkDone.AutoSize = true;
-            this.chkDone.Location = new System.Drawing.Point(18, 241);
-            this.chkDone.Name = "chkDone";
-            this.chkDone.Size = new System.Drawing.Size(395, 29);
-            this.chkDone.TabIndex = 3;
-            this.chkDone.Text = "Are you done watching or reading it?";
-            this.chkDone.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Title:";
             // 
-            // btnEnter
+            // btnEdit
             // 
-            this.btnEnter.Location = new System.Drawing.Point(104, 311);
-            this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(215, 78);
-            this.btnEnter.TabIndex = 4;
-            this.btnEnter.Text = "Enter";
-            this.btnEnter.UseVisualStyleBackColor = true;
-            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
+            this.btnEdit.Location = new System.Drawing.Point(248, 309);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(196, 78);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // UserInput
             // 
@@ -149,5 +162,6 @@
         private System.Windows.Forms.RadioButton rdoMovie;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
