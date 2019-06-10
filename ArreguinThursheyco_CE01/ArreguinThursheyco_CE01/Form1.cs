@@ -171,6 +171,15 @@ namespace ArreguinThursheyco_CE01
             // Instantiate a new UserInput form 
             UserInput ui = new UserInput();
 
+            // Subscribe to the event of editing an item when the user double clicks
+            ModifyObject += ui.UserInput_ModifyItem;
+
+            // raise the event to send back data to change selected items data in ListBox
+            if (ModifyObject != null)
+            {
+                ModifyObject(this, new ModifyObjectEventArgs(SelectedObject));
+            }
+
             // show UserInput form with populates fields to change
             ui.Show();
         }

@@ -46,9 +46,6 @@ namespace ArreguinThursheyco_CE01
         public UserInput()
         {
             InitializeComponent();
-
-            // Subscribe to the event of editing an item when the user double clicks
-            main.ModifyObject += UserInput_ModifyItem;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
