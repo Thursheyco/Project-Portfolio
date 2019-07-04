@@ -8,6 +8,8 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 
 ## Completed
 
+- YouTube Data API v3
+
 - Chose an API to build a custom app around.
 
 - Design Custom App based off Water Tracker App
