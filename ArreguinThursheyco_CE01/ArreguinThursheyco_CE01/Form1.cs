@@ -1,15 +1,8 @@
 ﻿// Thursheyco Arreguin
-// 06-06-19
-// DVP3 1906
+// 07-08-19
+// DVP3 1907
 // Code Exercise 01 - Event Handlers
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArreguinThursheyco_CE01
@@ -51,9 +44,9 @@ namespace ArreguinThursheyco_CE01
             get
             {
                 // check if anyhting is selected within listBoxUnseenUnread
-                if(listBoxUnreadUnseen.SelectedItem != null)
+                if(listBoxClassesToTake.SelectedItem != null)
                 {
-                    return listBoxUnreadUnseen.SelectedItem as Item;
+                    return listBoxClassesToTake.SelectedItem as Item;
                 }
                 return new Item();
             }
@@ -94,18 +87,18 @@ namespace ArreguinThursheyco_CE01
             // check if the item has been seen or read to determine which ListBox to add it to
             if(i.Done == true)
             {
-                listBoxReadSeen.Items.Add(i);
+                listBoxClassesCompleted.Items.Add(i);
             }
             else
             {
-                listBoxUnreadUnseen.Items.Add(i);
+                listBoxClassesToTake.Items.Add(i);
             }
         }
 
         private void btnMoveRight_Click(object sender, EventArgs e)
         {
             // check if the user has selected an item from listBoxUnseenUnread
-            if(listBoxUnreadUnseen.SelectedIndex == -1)
+            if(listBoxClassesToTake.SelectedIndex == -1)
             {
                 // alert the user they must select an item from the 1st ListBox to move to the 2nd
                 MessageBox.Show("Please select an item from Movies To-Watch / Books To-Read first.");
@@ -113,21 +106,21 @@ namespace ArreguinThursheyco_CE01
             else
             {
                 // move selected item from listBoxUnseenUnread to listBoxReadSeen
-                listBoxReadSeen.Items.Add(listBoxUnreadUnseen.SelectedItem);
+                listBoxClassesCompleted.Items.Add(listBoxClassesToTake.SelectedItem);
 
                 // set checkBox for Done to true for the item moved
-                Item i = listBoxUnreadUnseen.SelectedItem as Item;
+                Item i = listBoxClassesToTake.SelectedItem as Item;
                 i.Done = true;
 
                 // remove selected item from listBoxUnreadUnseen
-                listBoxUnreadUnseen.Items.Remove(listBoxUnreadUnseen.SelectedItem);
+                listBoxClassesToTake.Items.Remove(listBoxClassesToTake.SelectedItem);
             }
         }
 
         private void btnMoveLeft_Click(object sender, EventArgs e)
         {
             // check if the user has selected an item from listBoxSeenRead
-            if(listBoxReadSeen.SelectedIndex == -1)
+            if(listBoxClassesCompleted.SelectedIndex == -1)
             {
                 // alert the user they must select an item from the 2nd ListBox to move to the 1st
                 MessageBox.Show("Please select an item from Movies Seen / Books Read first.");
@@ -135,29 +128,29 @@ namespace ArreguinThursheyco_CE01
             else
             {
                 // move selected item from listBoxSeenRead to listBoxUnseenUnread
-                listBoxUnreadUnseen.Items.Add(listBoxReadSeen.SelectedItem);
+                listBoxClassesToTake.Items.Add(listBoxClassesCompleted.SelectedItem);
 
                 // set checkBox for Done to false
-                Item i = listBoxReadSeen.SelectedItem as Item;
+                Item i = listBoxClassesCompleted.SelectedItem as Item;
                 i.Done = false;
 
                 // remove selected item from listBoxReadSeen
-                listBoxReadSeen.Items.Remove(listBoxReadSeen.SelectedItem);
+                listBoxClassesCompleted.Items.Remove(listBoxClassesCompleted.SelectedItem);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             // check to see if the user made a selection from listBoxUnreadUnseen
-            if (listBoxUnreadUnseen.SelectedItem != null)
+            if (listBoxClassesToTake.SelectedItem != null)
             {
                 // delete selected item
-                listBoxUnreadUnseen.Items.Remove(listBoxUnreadUnseen.SelectedItem);
+                listBoxClassesToTake.Items.Remove(listBoxClassesToTake.SelectedItem);
             }
-            else if(listBoxReadSeen.SelectedItem != null)
+            else if(listBoxClassesCompleted.SelectedItem != null)
             {
                 // delete selected item from listBoxReadSeen
-                listBoxReadSeen.Items.Remove(listBoxReadSeen.SelectedItem);
+                listBoxClassesCompleted.Items.Remove(listBoxClassesCompleted.SelectedItem);
             }
             else
             {

@@ -1,12 +1,7 @@
 ﻿// Thursheyco Arreguin
-// 06-06-19
-// DVP3 1906
+// 07-08-19
+// DVP3 1907
 // Code Exercise 01 - Event Handler
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArreguinThursheyco_CE01
 {
@@ -14,8 +9,6 @@ namespace ArreguinThursheyco_CE01
     public class Item
     {
         public string Title { get; set; }
-        public bool Movie { get; set; }
-        public bool Book { get; set; }
         public bool Done { get; set; }
 
         // override ToString method to only return Title of Item

@@ -1,15 +1,8 @@
 ﻿// Thursheyco Arreguin
-// 06-06-19
-// DVP3 1906
+// 07-08-19
+// DVP3 1907
 // Code Exercise 01 - Event Handler
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArreguinThursheyco_CE01
@@ -29,16 +22,12 @@ namespace ArreguinThursheyco_CE01
             {
                 Item i = new Item();
                 i.Title = txtTitle.Text;
-                i.Movie = rdoMovie.Checked;
-                i.Book = rdoBook.Checked;
                 i.Done = chkDone.Checked;
                 return i;
             }
             set
             {
                 txtTitle.Text = value.Title;
-                rdoMovie.Checked = value.Movie;
-                rdoBook.Checked = value.Book;
                 chkDone.Checked = value.Done;
             }
         }
@@ -67,8 +56,6 @@ namespace ArreguinThursheyco_CE01
             Item i = e.ObjectToModify1 as Item;
 
             txtTitle.Text = i.Title;
-            rdoMovie.Checked = i.Movie;
-            rdoBook.Checked = i.Book;
             chkDone.Checked = i.Done;
 
             // show button to apply changes
