@@ -176,6 +176,5 @@ namespace ArreguinThursheyco_CE01
             // show UserInput form with populates fields to change
             ui.Show();
         }
-
     }
 }
