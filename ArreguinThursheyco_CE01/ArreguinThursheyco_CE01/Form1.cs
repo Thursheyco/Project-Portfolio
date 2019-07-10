@@ -12,14 +12,14 @@ namespace ArreguinThursheyco_CE01
         // EventHandler delegate to call the EventHandler method on MainForm
         public EventHandler<ModifyObjectEventArgs> ModifyObject;
 
-        // declare an internal class to help me modify a selected item from the listBoxUnseenUnread
+        // declare an internal class to help me modify a selected Course from the listBoxClassesToTake
         public class ModifyObjectEventArgs : EventArgs
         {
             // Instance / Member variables used to buld a new object with the selected item in the ListBox
-            Item ObjectToModify;
+            Course ObjectToModify;
 
             // Properties to allow access to the Item that I want to modify
-            public Item ObjectToModify1
+            public Course ObjectToModify1
             {
                 get
                 {
@@ -32,23 +32,23 @@ namespace ArreguinThursheyco_CE01
             }
 
             // Constructor that will take in parameters to modify
-            public ModifyObjectEventArgs(Item i)
+            public ModifyObjectEventArgs(Course i)
             {
                 ObjectToModify = i;
             }
         }
 
-        // public property to access selected item in listBoxUnseenUnread
-        public Item SelectedObject
+        // public property to access selected course in listBoxClassesToTake
+        public Course SelectedObject
         {
             get
             {
-                // check if anyhting is selected within listBoxUnseenUnread
+                // check if anyhting is selected within listBoxClassesToTake
                 if(listBoxClassesToTake.SelectedItem != null)
                 {
-                    return listBoxClassesToTake.SelectedItem as Item;
+                    return listBoxClassesToTake.SelectedItem as Course;
                 }
-                return new Item();
+                return new Course();
             }
         }
 
@@ -82,9 +82,9 @@ namespace ArreguinThursheyco_CE01
             UserInput ui = sender as UserInput;
 
             // cast again to help with process
-            Item i = ui.Data;
+            Course i = ui.Data;
 
-            // check if the item has been seen or read to determine which ListBox to add it to
+            // check if the course has been completed to determine which ListBox to add it to
             if(i.Done == true)
             {
                 listBoxClassesCompleted.Items.Add(i);
@@ -97,65 +97,65 @@ namespace ArreguinThursheyco_CE01
 
         private void btnMoveRight_Click(object sender, EventArgs e)
         {
-            // check if the user has selected an item from listBoxUnseenUnread
+            // check if the user has selected a course from listBoxClassesToTake
             if(listBoxClassesToTake.SelectedIndex == -1)
             {
-                // alert the user they must select an item from the 1st ListBox to move to the 2nd
-                MessageBox.Show("Please select an item from Movies To-Watch / Books To-Read first.");
+                // alert the user they must select a course from the 1st ListBox to move to the 2nd
+                MessageBox.Show("Please select a class from Classes To Take first.");
             }
             else
             {
-                // move selected item from listBoxUnseenUnread to listBoxReadSeen
+                // move selected item from listBoxClassesToTake to listClassesCompleted
                 listBoxClassesCompleted.Items.Add(listBoxClassesToTake.SelectedItem);
 
-                // set checkBox for Done to true for the item moved
-                Item i = listBoxClassesToTake.SelectedItem as Item;
+                // set checkBox for Done to true for the course moved
+                Course i = listBoxClassesToTake.SelectedItem as Course;
                 i.Done = true;
 
-                // remove selected item from listBoxUnreadUnseen
+                // remove selected course from listClassesToTake
                 listBoxClassesToTake.Items.Remove(listBoxClassesToTake.SelectedItem);
             }
         }
 
         private void btnMoveLeft_Click(object sender, EventArgs e)
         {
-            // check if the user has selected an item from listBoxSeenRead
+            // check if the user has selected a course from listClassesToTake
             if(listBoxClassesCompleted.SelectedIndex == -1)
             {
-                // alert the user they must select an item from the 2nd ListBox to move to the 1st
-                MessageBox.Show("Please select an item from Movies Seen / Books Read first.");
+                // alert the user they must select a course from the 2nd ListBox to move to the 1st
+                MessageBox.Show("Please select a class from Classes Completed first.");
             }
             else
             {
-                // move selected item from listBoxSeenRead to listBoxUnseenUnread
+                // move selected item from listClasesCompleted to listBoxClassesToTake
                 listBoxClassesToTake.Items.Add(listBoxClassesCompleted.SelectedItem);
 
                 // set checkBox for Done to false
-                Item i = listBoxClassesCompleted.SelectedItem as Item;
+                Course i = listBoxClassesCompleted.SelectedItem as Course;
                 i.Done = false;
 
-                // remove selected item from listBoxReadSeen
+                // remove selected item from listBoxClassesCompleted
                 listBoxClassesCompleted.Items.Remove(listBoxClassesCompleted.SelectedItem);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            // check to see if the user made a selection from listBoxUnreadUnseen
+            // check to see if the user made a selection from listBoxClassesToTake
             if (listBoxClassesToTake.SelectedItem != null)
             {
-                // delete selected item
+                // delete selected course
                 listBoxClassesToTake.Items.Remove(listBoxClassesToTake.SelectedItem);
             }
             else if(listBoxClassesCompleted.SelectedItem != null)
             {
-                // delete selected item from listBoxReadSeen
+                // delete selected course from listBoxClassesCompleted
                 listBoxClassesCompleted.Items.Remove(listBoxClassesCompleted.SelectedItem);
             }
             else
             {
-                // alert user to select an item first
-                MessageBox.Show("Please select an item from Movies Seen / Books Read first,\nor from Movies To-Watch / Books To-Read.");
+                // alert user to select a course first
+                MessageBox.Show("Please select a class from Classes To Take first,\nor from Classes Completed.");
             }
         }
 
@@ -164,7 +164,7 @@ namespace ArreguinThursheyco_CE01
             // Instantiate a new UserInput form 
             UserInput ui = new UserInput();
 
-            // Subscribe to the event of editing an item when the user double clicks
+            // Subscribe to the event of editing a course when the user double clicks
             ModifyObject += ui.UserInput_ModifyItem;
 
             // raise the event to send back data to change selected items data in ListBox

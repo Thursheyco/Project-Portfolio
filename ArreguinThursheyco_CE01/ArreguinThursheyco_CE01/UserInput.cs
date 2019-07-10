@@ -16,11 +16,11 @@ namespace ArreguinThursheyco_CE01
         public EventHandler AddToDone;
 
         // Property for UserInput form to get & set the controls on its form
-        public Item Data
+        public Course Data
         {
             get
             {
-                Item i = new Item();
+                Course i = new Course();
                 i.Title = txtTitle.Text;
                 i.Done = chkDone.Checked;
                 return i;
@@ -49,11 +49,11 @@ namespace ArreguinThursheyco_CE01
             Close();
         }
 
-        // EventHandler Method to modify the item selected from the ListBox on MainForm
+        // EventHandler Method to modify the course selected from the ListBox on MainForm
         public void UserInput_ModifyItem(object sender, MainForm.ModifyObjectEventArgs e)
         {
-            // set fields for UserInput form from selected item
-            Item i = e.ObjectToModify1 as Item;
+            // set fields for UserInput form from selected course
+            Course i = e.ObjectToModify1 as Course;
 
             txtTitle.Text = i.Title;
             chkDone.Checked = i.Done;
@@ -64,7 +64,7 @@ namespace ArreguinThursheyco_CE01
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            // raise the event to send back data to change selected items data in ListBox
+            // raise the event to send back data to change selected courses data in ListBox
             if (main.ModifyObject != null)
             {
                 main.ModifyObject(this, new MainForm.ModifyObjectEventArgs(main.SelectedObject));
