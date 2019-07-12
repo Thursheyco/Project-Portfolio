@@ -6,6 +6,8 @@ using System;
 using System.Windows.Forms;
 // Directive for using XML
 using System.Xml;
+// Directive for file reading & writing
+using System.IO;
 
 namespace ArreguinThursheyco_CE01
 {
@@ -226,6 +228,85 @@ namespace ArreguinThursheyco_CE01
 
                     // Write the end element for the data
                     writer.WriteEndElement();
+                }
+            }
+        }
+
+        // method to load txt file into application
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open an openFileDialog if the user choses ok
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamReader inStream = new StreamReader(openFileDialog1.FileName))
+                {
+                    while (inStream.Peek() > -1)
+                    {
+                        // Characters to Trim
+                        char[] charToTrim = { '%', '&' };
+
+                        // Splits the data where pipe character is into an array
+                        string[] line = inStream.ReadLine().Split('|');
+
+                        // Loops through line string array to place into original ListBox,
+                        // index starts at 1 because the first item is at index 0 in the ListBox is empty
+                        for (int i = 1; i < line.Length; i++)
+                        {
+                            if (line[i].Substring(0, 1) == "%")
+                            {
+                                listBoxClassesToTake.Items.Add(new Course(line[i].Trim(charToTrim)));
+                            }
+                            else if (line[i].Substring(0, 1) == "&")
+                            {
+                                listBoxClassesCompleted.Items.Add(new Course(line[i].Trim(charToTrim)));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // method to save data as a txt file
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Declare & instantiate a saveFileDialog
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            save.FilterIndex = 0;
+
+            // Test to see if user hit ok
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                // Writes out user objects to user selected folder
+                using (StreamWriter outStream = new StreamWriter(save.FileName))
+                {
+                    // Write user objects out to file
+                    foreach (Course u in listBoxClassesToTake.Items)
+                    {
+                        // will also be written out to save and must be trimmed when loaded back in
+                        outStream.Write("|");
+
+                        // % character will be written out to save but must be trimmed off when loaded in
+                        outStream.Write("%");
+
+                        // Writes out the data associated with the selected item
+                        outStream.Write(u.Title);
+                        outStream.Write(u.Done.ToString());
+                    }
+
+                    // Write out users2 objects
+                    foreach (Course u2 in listBoxClassesCompleted.Items)
+                    {
+                        // will also be written out to save and must be trimmed when loaded back in
+                        outStream.Write("|");
+
+                        // & character insert in the beginning of a line to be saved out to know which ListBox it is from
+                        outStream.Write("&");
+
+                        // Writes out the data associated with the selected item
+                        outStream.Write(u2.Title);
+                        outStream.Write(u2.Done.ToString());
+                    }
                 }
             }
         }

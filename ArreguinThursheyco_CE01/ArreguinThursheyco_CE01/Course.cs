@@ -2,6 +2,7 @@
 // 07-08-19
 // DVP3 1907
 // Code Exercise 01 - Event Handler
+using System;
 
 namespace ArreguinThursheyco_CE01
 {
@@ -16,5 +17,14 @@ namespace ArreguinThursheyco_CE01
         {
             return Title;
         }
+
+        // constructor to load in courses
+        public Course(string title)
+        {
+            Title = title;
+        }
+
+        // default constructor
+        public Course() { }
     }
 }
