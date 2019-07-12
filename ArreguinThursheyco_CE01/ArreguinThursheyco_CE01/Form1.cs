@@ -4,6 +4,8 @@
 // Code Exercise 01 - Event Handlers
 using System;
 using System.Windows.Forms;
+// Directive for using XML
+using System.Xml;
 
 namespace ArreguinThursheyco_CE01
 {
@@ -159,22 +161,73 @@ namespace ArreguinThursheyco_CE01
             }
         }
 
-        private void listBoxUnreadUnseen_MouseDoubleClick(object sender, MouseEventArgs e)
+        // method to display s course double clicked from either ListBox
+        private void listBoxClassesToTake_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // Instantiate a new UserInput form 
             UserInput ui = new UserInput();
 
-            // Subscribe to the event of editing a course when the user double clicks
+            // Subscribe to the event of editing a course when the user double clicks a course in listBoxClassesToTake
             ModifyObject += ui.UserInput_ModifyItem;
 
-            // raise the event to send back data to change selected items data in ListBox
+            // raise the event to send back data to change selected courses data in ListBox
             if (ModifyObject != null)
             {
                 ModifyObject(this, new ModifyObjectEventArgs(SelectedObject));
             }
 
-            // show UserInput form with populates fields to change
+            // show UserInput form with populated fields to change
             ui.Show();
+        }
+
+        // method to save data in both ListBoxes in XML format
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Declare & instantiate a SaveDialogBox
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            // Set the default extension
+            saveFileDialog.DefaultExt = "xml";
+
+            if (DialogResult.OK == saveFileDialog.ShowDialog())
+            {
+                // First we must create the XMLWriterSettings
+                XmlWriterSettings settings = new XmlWriterSettings();
+
+                // Set the level of conformance
+                settings.ConformanceLevel = ConformanceLevel.Document;
+
+                // Set the indent to true to head readability of the XML
+                settings.Indent = true;
+
+                // Create the XMLWriter
+                using (XmlWriter writer = XmlWriter.Create(saveFileDialog.FileName, settings))
+                {
+                    // First element will define the data
+                    writer.WriteStartElement("CourseData");
+
+                    foreach(Course c in listBoxClassesToTake.Items)
+                    {
+                        // Save the title of the course
+                        writer.WriteElementString("ClassTitle", c.Title);
+
+                        // Save the status of course
+                        writer.WriteElementString("CourseComplete", Convert.ToString(c.Done));
+                    }
+
+                    foreach(Course c in listBoxClassesCompleted.Items)
+                    {
+                        // Save the title of the course
+                        writer.WriteElementString("ClassTitle", c.Title);
+
+                        // Save the status of course
+                        writer.WriteElementString("CourseComplete", Convert.ToString(c.Done));
+                    }
+
+                    // Write the end element for the data
+                    writer.WriteEndElement();
+                }
+            }
         }
     }
 }

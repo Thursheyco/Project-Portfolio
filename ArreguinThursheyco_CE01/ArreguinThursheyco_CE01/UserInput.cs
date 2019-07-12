@@ -67,8 +67,11 @@ namespace ArreguinThursheyco_CE01
             // raise the event to send back data to change selected courses data in ListBox
             if (main.ModifyObject != null)
             {
-                main.ModifyObject(this, new MainForm.ModifyObjectEventArgs(main.SelectedObject));
+                main.ModifyObject(this, new MainForm.ModifyObjectEventArgs(Data));
             }
+
+            // Close UserInput form
+            Close();
         }
     }
 }
