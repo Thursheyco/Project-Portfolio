@@ -59,7 +59,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1068, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1209, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +72,7 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 38);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 36);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // loadToolStripMenuItem
@@ -137,7 +137,7 @@
             // btnDelete
             // 
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(485, 446);
+            this.btnDelete.Location = new System.Drawing.Point(564, 647);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 86);
             this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +148,7 @@
             // btnAdd
             // 
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(485, 153);
+            this.btnAdd.Location = new System.Drawing.Point(564, 354);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 86);
             this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -158,7 +158,7 @@
             // 
             // btnMoveLeft
             // 
-            this.btnMoveLeft.Location = new System.Drawing.Point(471, 357);
+            this.btnMoveLeft.Location = new System.Drawing.Point(550, 558);
             this.btnMoveLeft.Name = "btnMoveLeft";
             this.btnMoveLeft.Size = new System.Drawing.Size(123, 55);
             this.btnMoveLeft.TabIndex = 5;
@@ -168,7 +168,7 @@
             // 
             // btnMoveRight
             // 
-            this.btnMoveRight.Location = new System.Drawing.Point(471, 280);
+            this.btnMoveRight.Location = new System.Drawing.Point(550, 481);
             this.btnMoveRight.Name = "btnMoveRight";
             this.btnMoveRight.Size = new System.Drawing.Size(125, 55);
             this.btnMoveRight.TabIndex = 6;
@@ -179,7 +179,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listBoxClassesCompleted);
-            this.groupBox1.Location = new System.Drawing.Point(620, 60);
+            this.groupBox1.Location = new System.Drawing.Point(699, 261);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(436, 472);
             this.groupBox1.TabIndex = 7;
@@ -189,7 +189,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBoxClassesToTake);
-            this.groupBox2.Location = new System.Drawing.Point(12, 57);
+            this.groupBox2.Location = new System.Drawing.Point(91, 258);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(436, 475);
             this.groupBox2.TabIndex = 8;
@@ -204,7 +204,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 544);
+            this.AutoScroll = true;
+            this.BackgroundImage = global::ArreguinThursheyco_CE01.Properties.Resources.iPhone7Image;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1209, 1294);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnMoveRight);
@@ -212,6 +215,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Mobile Dev Degree Checklist";

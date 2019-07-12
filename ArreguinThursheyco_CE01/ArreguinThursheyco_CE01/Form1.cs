@@ -3,6 +3,7 @@
 // DVP3 1907
 // Code Exercise 01 - Event Handlers
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 // Directive for using XML
 using System.Xml;
@@ -48,7 +49,7 @@ namespace ArreguinThursheyco_CE01
             get
             {
                 // check if anyhting is selected within listBoxClassesToTake
-                if(listBoxClassesToTake.SelectedItem != null)
+                if (listBoxClassesToTake.SelectedItem != null)
                 {
                     return listBoxClassesToTake.SelectedItem as Course;
                 }
@@ -89,7 +90,7 @@ namespace ArreguinThursheyco_CE01
             Course i = ui.Data;
 
             // check if the course has been completed to determine which ListBox to add it to
-            if(i.Done == true)
+            if (i.Done == true)
             {
                 listBoxClassesCompleted.Items.Add(i);
             }
@@ -102,7 +103,7 @@ namespace ArreguinThursheyco_CE01
         private void btnMoveRight_Click(object sender, EventArgs e)
         {
             // check if the user has selected a course from listBoxClassesToTake
-            if(listBoxClassesToTake.SelectedIndex == -1)
+            if (listBoxClassesToTake.SelectedIndex == -1)
             {
                 // alert the user they must select a course from the 1st ListBox to move to the 2nd
                 MessageBox.Show("Please select a class from Classes To Take first.");
@@ -124,7 +125,7 @@ namespace ArreguinThursheyco_CE01
         private void btnMoveLeft_Click(object sender, EventArgs e)
         {
             // check if the user has selected a course from listClassesToTake
-            if(listBoxClassesCompleted.SelectedIndex == -1)
+            if (listBoxClassesCompleted.SelectedIndex == -1)
             {
                 // alert the user they must select a course from the 2nd ListBox to move to the 1st
                 MessageBox.Show("Please select a class from Classes Completed first.");
@@ -151,7 +152,7 @@ namespace ArreguinThursheyco_CE01
                 // delete selected course
                 listBoxClassesToTake.Items.Remove(listBoxClassesToTake.SelectedItem);
             }
-            else if(listBoxClassesCompleted.SelectedItem != null)
+            else if (listBoxClassesCompleted.SelectedItem != null)
             {
                 // delete selected course from listBoxClassesCompleted
                 listBoxClassesCompleted.Items.Remove(listBoxClassesCompleted.SelectedItem);
@@ -208,7 +209,7 @@ namespace ArreguinThursheyco_CE01
                     // First element will define the data
                     writer.WriteStartElement("CourseData");
 
-                    foreach(Course c in listBoxClassesToTake.Items)
+                    foreach (Course c in listBoxClassesToTake.Items)
                     {
                         // Save the title of the course
                         writer.WriteElementString("ClassTitle", c.Title);
@@ -217,7 +218,7 @@ namespace ArreguinThursheyco_CE01
                         writer.WriteElementString("CourseComplete", Convert.ToString(c.Done));
                     }
 
-                    foreach(Course c in listBoxClassesCompleted.Items)
+                    foreach (Course c in listBoxClassesCompleted.Items)
                     {
                         // Save the title of the course
                         writer.WriteElementString("ClassTitle", c.Title);
@@ -310,5 +311,29 @@ namespace ArreguinThursheyco_CE01
                 }
             }
         }
+        //Written by Keith Webster. Used with permission. Not to be distributed. //Place this inside the class space in the form you would like to size.
+        //Call this method AFTER InitializeComponent() inside the form's constructor.
+        void HandleClientWindowSize()
+        {
+            //Modify ONLY these float values
+            float HeightValueToChange = 1.4f; float WidthValueToChange = 6.0f;
+            //DO NOT MODIFY THIS CODE
+            int height = Convert.ToInt32(Screen.PrimaryScreen.WorkingArea.Size.Height /
+            HeightValueToChange);
+            int width = Convert.ToInt32(Screen.PrimaryScreen.WorkingArea.Size.Width /
+            WidthValueToChange);
+            if (height < Size.Height)
+                height = Size.Height; if (width < Size.Width)
+                width = Size.Width; this.Size = new Size(width, height);
+            //this.Size = new Size(376, 720); }
+        }
     }
 }
+/* Resubmisson Fixes From Feedback
+ * Made more meaningful commits when a new feature was added.
+ * The user is now able to save in XML format.
+ * The user is able to load data from a txt file.
+ * The user is able to save data into a txt file.
+ * File menu commands are present & functioning.
+ * The iPhone background has been applied.
+ */
