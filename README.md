@@ -7,6 +7,7 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 
 
 ## Completed
+- Rock, Paper Scissors Game in Swift for iOS.
 
 - YouTube Data API v3
 
@@ -50,6 +51,8 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 
 
 ## Knowledge Gained
+- Adaptive Layout for iOS Devices
+
 - How to read API Documentation
 
 - How to set-up a databases' infrastructure
@@ -65,12 +68,3 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 - Clean Code Techniques
 
 - Program Development Life Cycle
-
-
-
-
-
-
-
-
-
