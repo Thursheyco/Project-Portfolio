@@ -1,12 +1,12 @@
-# Project & Portfolio III
+# Mobile App Developer
 
 
-Hello 🖥 🌎! 
+Hello 🖥 🌎!
 
-My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been using this repository to keep track of my **Project & Portfolio** coding challenges that I have currently completed.
+My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been using this repository to keep track of my **Project & Portfolio** mobile applications that I have currently completed.
 
 
-## Completed
+## Challenges Completed
 - Rock, Paper Scissors Game in Swift for iOS.
 
 - YouTube Data API v3
@@ -14,10 +14,6 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 - Chose an API to build a custom app around.
 
 - Design Custom App based off Water Tracker App
-
-- Code Exercise 2
-
-- Code Exercise 1
 
 - Review markdown syntax
 
@@ -29,25 +25,13 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 
 - Impact of Version Control
 
-- Exam 1
-
 - Research C-Sharp in the Industry
 
 - Research Reverse Engineering
 
 - Impact of C-Sharp Assignment
 
-- Exam 2
-
-- Progress Check 2
-
-- Progress Check 3
-
-- Exam 3
-
-- Postmortem
-
-
+- Develop iOS, Android mobile phone, tvOS, Android TV application
 
 
 ## Knowledge Gained
