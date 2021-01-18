@@ -52,3 +52,5 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 - Clean Code Techniques
 
 - Program Development Life Cycle
+
+- Adaptive Layout for Android Devices
