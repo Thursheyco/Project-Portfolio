@@ -35,7 +35,7 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 
 
 ## Knowledge Gained
-- Adaptive Layout for iOS Devices
+- Adaptive Layout for iOS, & Android Devices
 
 - How to read API Documentation
 
@@ -53,4 +53,6 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 
 - Program Development Life Cycle
 
-- Adaptive Layout for Android Devices
+## Screenshots of Work
+
+- SkateBuddy
