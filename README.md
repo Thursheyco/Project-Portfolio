@@ -56,3 +56,8 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been us
 ## Screenshots of Work
 
 - SkateBuddy
+
+![IMG_0230](https://user-images.githubusercontent.com/40646431/108576091-4aeea680-72ea-11eb-91ca-9ccf73a18c49.PNG)
+![IMG_0231](https://user-images.githubusercontent.com/40646431/108576092-4b873d00-72ea-11eb-9eb0-65b51e93aac9.PNG)
+![IMG_0232](https://user-images.githubusercontent.com/40646431/108576094-4c1fd380-72ea-11eb-9140-f146e4589882.PNG)
+![IMG_0233](https://user-images.githubusercontent.com/40646431/108576096-4d510080-72ea-11eb-8568-08166892ba35.PNG)
