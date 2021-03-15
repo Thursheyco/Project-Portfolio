@@ -3,7 +3,7 @@
 
 Hello 🖥 🌎!
 
-My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & have been using this repository to keep track of my **Project & Portfolio** mobile applications that I have currently completed.
+My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been using this repository to keep track of my **Project & Portfolio** mobile applications that I have currently completed. Also, SkateBudy suggestions or questions email: sheycoa@gmail.com
 
 
 ## Challenges Completed
