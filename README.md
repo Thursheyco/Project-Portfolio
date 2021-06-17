@@ -50,6 +50,8 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been 
 
 - Program Development Life Cycle
 
+- In-App Purchases, Subscriptions, and One Time Purchases for iOS, & Android Devices
+
 ## Screenshots of Work
 
 - SkateBudy on iOS
