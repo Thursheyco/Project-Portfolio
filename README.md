@@ -40,7 +40,7 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been 
 
 - How to reverse engineer an app into a flow chart
 
-- Setup a repository on GitHub.com
+- Setup a repository on GitHub.com & BitBucket.org
 
 - Common commands for terminal & git
 
@@ -48,9 +48,15 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been 
 
 - Clean Code Techniques
 
+- CoreData Framework for iOS
+
+- SQLite Framework for Android
+
 - Program Development Life Cycle
 
 - In-App Purchases, Subscriptions, and One Time Purchases for iOS, & Android Devices
+
+- Design App Logos & Icons for iOS, and Android apps
 
 ## Screenshots of Work
 
