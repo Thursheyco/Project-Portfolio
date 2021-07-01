@@ -5,11 +5,11 @@ Hello 🖥 🌎!
 My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been using this repository to keep track of my **Project & Portfolio** mobile applications that I have currently completed. Also, SkateBudy can be found [here](https://apps.apple.com/us/app/skatebudy/id1557374871) & for any suggestions or questions on it email me please at sheycoa@gmail.com
 
 ## Challenges Completed
-- Rock, Paper Scissors Game in Swift for iOS.
+- Rock, Paper, Scissors Game in Swift for iOS
 
 - YouTube Data API v3
 
-- Chose an API to build a custom app around.
+- OpenWeather API
 
 - Design Custom App based off Water Tracker App
 
