@@ -5,7 +5,7 @@ Hello 🖥 🌎!
 My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been using this repository to keep track of my **Project & Portfolio** mobile applications that I have currently completed. Also, SkateBudy can be found [here](https://apps.apple.com/us/app/skatebudy/id1557374871) & for any suggestions or questions on it email me please at sheycoa@gmail.com
 
 ## Challenges Completed
-- Rock, Paper, Scissors Game in Swift for iOS
+- PickMatch Game in Swift for iOS
 
 - YouTube Data API v3
 
@@ -58,6 +58,8 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been 
 
 - Design App Logos & Icons for iOS, and Android apps
 
+- Integrating AdMob to Android & Apple apps
+
 ## Screenshots of Work
 
 - SkateBudy on iOS
@@ -74,10 +76,8 @@ My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been 
 ![android3](https://user-images.githubusercontent.com/40646431/120404180-ca413c80-c313-11eb-9eb4-b6df62bae1f3.png)
 ![android4](https://user-images.githubusercontent.com/40646431/120404205-d62cfe80-c313-11eb-93e5-625a21d71c06.png)
 
-- Rock, Paper, Scissors on iOS
+- PickMatch on iOS
 
-![Simulator Screen Shot - iPhone 8 - 2021-02-19 at 19 52 18](https://user-images.githubusercontent.com/40646431/108576683-85594300-72ec-11eb-8471-80d47d821e6d.png)
-![Simulator Screen Shot - iPhone 8 - 2021-02-19 at 19 52 29](https://user-images.githubusercontent.com/40646431/108576685-85594300-72ec-11eb-8c28-67a20c79b7a6.png)
-![Simulator Screen Shot - iPhone 8 - 2021-02-19 at 19 52 35](https://user-images.githubusercontent.com/40646431/108576686-85f1d980-72ec-11eb-9d1f-d5200d63101f.png)
-![Simulator Screen Shot - iPhone 8 - 2021-02-19 at 19 53 00](https://user-images.githubusercontent.com/40646431/108576688-85f1d980-72ec-11eb-8666-66b05918fb2d.png)
-![Simulator Screen Shot - iPhone 11 - 2021-02-19 at 19 52 22](https://user-images.githubusercontent.com/40646431/108576689-868a7000-72ec-11eb-926e-3814701143cd.png)
+![Simulator Screen Shot - iPad Pro (12 9-inch) (4th generation) - 2021-07-07 at 14 19 31](https://user-images.githubusercontent.com/40646431/124952741-7d234b00-dfe2-11eb-9044-8424d389c5f0.png)
+
+![Simulator Screen Shot - iPhone 12 Pro Max - 2021-07-07 at 12 22 12](https://user-images.githubusercontent.com/40646431/124953301-05a1eb80-dfe3-11eb-8e4b-feef9e22af6b.png)
