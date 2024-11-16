@@ -2,7 +2,7 @@
 
 Hello 🖥 🌎!
 
-My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been using this repository to keep track of my **Project & Portfolio** mobile applications that I have currently completed. Also, SkateBudy can be found [here](https://apps.apple.com/us/app/skatebudy/id1557374871) & for any suggestions or questions on it email me please at sheycoa@gmail.com
+My name is _Thursheyco Arreguin_, I go by **(shake-o)** for short & I have been using this repository to keep track of my **Project & Portfolio** mobile applications that I have currently completed. Also, SkateBudy can be found [here](https://apps.apple.com/us/app/skatebudy/id1557374871) iOS, and [here](https://play.google.com/store/apps/details?id=com.thursheyco.skatebud) Android. For any suggestions or questions on it email me please at sheycoa@gmail.com
 
 ## Challenges Completed
 - PickMatch Game in Swift for iOS
